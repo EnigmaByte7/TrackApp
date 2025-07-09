@@ -1,50 +1,26 @@
-# Welcome to your Expo app 👋
+### TrackApp / Consignment Tracking
+- Its an implementation of real time stream processing using apache kafka 
+- to simulate real time consignment tracking
+- ingests real time gps location from rider app (see repo)
+- performs stream processing to find ETA
+- pushes the changes to a redis pub/sub channel
+- user app receives the changes via a SSE server
+- spatial data stored in postgres + postgis managed via drizzle ORM
+- app built is built on expo + React Native
+- background + foreground location via expo-location
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+### Architecture
+- see full design [here](https://excalidraw.com/#json=_YGt43JuXaAgYxr0hRpOI,SwSQLjurbP9uuQYt1pEFmQ)
+- devices supported Android 11+
 
-## Get started
+### Known issues
+- background location may not work correctly on some devices and emulators due to an unresolved issue in expo-location read here [#33911](https://github.com/expo/expo/issues/33911)
 
-1. Install dependencies
+### Screenshots
 
-   ```bash
-   npm install
-   ```
-
-2. Start the app
-
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+![s1](/assets/images/s1.jpg)
+![s2](/assets/images/s2.jpg)
+![s3](/assets/images/s3.jpg)
+![s4](/assets/images/s4.jpg)
+![s5](/assets/images/s5.jpg)
+![s6](/assets/images/s6.jpg)
